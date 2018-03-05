@@ -1,0 +1,1198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5B43C9D-7ADC-4A18-9910-3D30553BEBBE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>v1Tabulare_z13</RootNamespace>
+    <AssemblyName>v1Tabulare_z13</AssemblyName>
+    <ApplicationIcon>icone3.ico</ApplicationIcon>
+    <Win32Resource>
+    </Win32Resource>
+    <ManifestCertificateThumbprint>514FBA5834CD024C470BD1FB66DC9991DAB5B29D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>tabulare_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/tabulare/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>tabulare.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CallFlexMidnet">
+      <HintPath>..\CallFlexMidnet.dll</HintPath>
+    </Reference>
+    <Reference Include="controller">
+      <HintPath>..\controller\bin\Debug\controller.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="MarqueControl">
+      <HintPath>..\MarqueControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="model">
+      <HintPath>..\model\bin\Debug\model.dll</HintPath>
+    </Reference>
+    <Reference Include="PontoBr">
+      <HintPath>..\..\..\Programas\Dll\PontoBr.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\fCampos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\fCampos.Designer.cs">
+      <DependentUpon>fCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cContatosTrabalhadosDetalhado.cs">
+      <DependentUpon>cContatosTrabalhadosDetalhado.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cContatosTrabalhadosOperador.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cContatosTrabalhadosOperador.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cContatosTrabalhadosSintetico_Operador.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cContatosTrabalhadosSintetico_Operador.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cContatosTrabalhadosSintetico_Total.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cContatosTrabalhadosSintetico_Total.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cGraficoContatosTrabalhados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cGraficoContatosTrabalhados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cGraficoVendas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cGraficoVendas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cMidiasDetalhado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cMidiasDetalhado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cStatusMailling.cs">
+      <DependentUpon>cStatusMailling.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cRespostasScriptSintetico.cs">
+      <DependentUpon>cRespostasScriptSintetico.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cRespostasScriptDetalhado.cs">
+      <DependentUpon>cRespostasScriptDetalhado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cStatusProspectPorDDD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cStatusProspectPorDDD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cVendasSintetico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cVendasSintetico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cMidiasSintetico.cs">
+      <DependentUpon>cMidiasSintetico.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cMidias_Status.cs">
+      <DependentUpon>cMidias_Status.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cGraficoVendasAuditoriaPeriodo.cs">
+      <DependentUpon>cGraficoVendasAuditoriaPeriodo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cGraficoVendasAuditoriaOperador.cs">
+      <DependentUpon>cGraficoVendasAuditoriaOperador.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cGraficoStatusMailing.cs">
+      <DependentUpon>cGraficoStatusMailing.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\relatorio\cVenda.cs">
+      <DependentUpon>cVenda.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAdministrador.Designer.cs">
+      <DependentUpon>fAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBackOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBackOffice.Designer.cs">
+      <DependentUpon>fBackOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fOperador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fOperador.designer.cs">
+      <DependentUpon>fOperador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSobre.Designer.cs">
+      <DependentUpon>fSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="operador\fContatosTrabalhados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="operador\fContatosTrabalhados.designer.cs">
+      <DependentUpon>fContatosTrabalhados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="operador\fTrocarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="operador\fTrocarSenha.Designer.cs">
+      <DependentUpon>fTrocarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="operador\fAgendamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="operador\fAgendamentos.designer.cs">
+      <DependentUpon>fAgendamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fQuantitativoDadosVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fQuantitativoDadosVenda.designer.cs">
+      <DependentUpon>fQuantitativoDadosVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fGraficoStatusMailing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fGraficoStatusMailing.Designer.cs">
+      <DependentUpon>fGraficoStatusMailing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fGraficoVendasAuditoriaOperador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fGraficoVendasAuditoriaOperador.Designer.cs">
+      <DependentUpon>fGraficoVendasAuditoriaOperador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fGraficoVendasAuditoriaPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fGraficoVendasAuditoriaPeriodo.Designer.cs">
+      <DependentUpon>fGraficoVendasAuditoriaPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fGraficoContatosTrabalhados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fGraficoContatosTrabalhados.Designer.cs">
+      <DependentUpon>fGraficoContatosTrabalhados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fGraficoVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fGraficoVendas.Designer.cs">
+      <DependentUpon>fGraficoVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fMidiaDetalhado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fMidiaDetalhado.designer.cs">
+      <DependentUpon>fMidiaDetalhado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fMidiaSintetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fMidiaSintetico.designer.cs">
+      <DependentUpon>fMidiaSintetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fStatusAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fStatusAuditoria.Designer.cs">
+      <DependentUpon>fStatusAuditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fBlackList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fBlackList.Designer.cs">
+      <DependentUpon>fBlackList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fEnviarPreditivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fEnviarPreditivo.Designer.cs">
+      <DependentUpon>fEnviarPreditivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fBackofficeVenda_detalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fBackofficeVenda_detalhe.designer.cs">
+      <DependentUpon>fBackofficeVenda_detalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fConfiguracaoEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fConfiguracaoEmail.Designer.cs">
+      <DependentUpon>fConfiguracaoEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fMailingIndicacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fMailingIndicacao.Designer.cs">
+      <DependentUpon>fMailingIndicacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fPermitirEnvioEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fPermitirEnvioEmail.designer.cs">
+      <DependentUpon>fPermitirEnvioEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSupervisor.Designer.cs">
+      <DependentUpon>fSupervisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="operador\fAtendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="operador\fAtendimento.Designer.cs">
+      <DependentUpon>fAtendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="admin\fCampos.resx">
+      <DependentUpon>fCampos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cContatosTrabalhadosDetalhado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cContatosTrabalhadosDetalhado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cContatosTrabalhadosOperador.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cContatosTrabalhadosOperador.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cContatosTrabalhadosSintetico_Operador.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cContatosTrabalhadosSintetico_Operador.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cContatosTrabalhadosSintetico_Total.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cContatosTrabalhadosSintetico_Total.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cGraficoContatosTrabalhados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cGraficoContatosTrabalhados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cGraficoVendas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cGraficoVendas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cMidiasDetalhado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cMidiasDetalhado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cStatusMailling.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cStatusMailling.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cRespostasScriptSintetico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cRespostasScriptSintetico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cRespostasScriptDetalhado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cRespostasScriptDetalhado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cStatusProspectPorDDD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cStatusProspectPorDDD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cVendasSintetico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cVendasSintetico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cMidiasSintetico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cMidiasSintetico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cMidias_Status.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cMidias_Status.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cGraficoVendasAuditoriaPeriodo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cGraficoVendasAuditoriaPeriodo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cGraficoVendasAuditoriaOperador.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cGraficoVendasAuditoriaOperador.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cGraficoStatusMailing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cGraficoStatusMailing.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\relatorio\cVenda.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cVenda.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAdministrador.resx">
+      <DependentUpon>fAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBackOffice.resx">
+      <DependentUpon>fBackOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fOperador.resx">
+      <DependentUpon>fOperador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSobre.resx">
+      <DependentUpon>fSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="operador\fContatosTrabalhados.resx">
+      <DependentUpon>fContatosTrabalhados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="operador\fTrocarSenha.resx">
+      <DependentUpon>fTrocarSenha.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="operador\fAgendamentos.resx">
+      <DependentUpon>fAgendamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fQuantitativoDadosVenda.resx">
+      <DependentUpon>fQuantitativoDadosVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fGraficoStatusMailing.resx">
+      <DependentUpon>fGraficoStatusMailing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fGraficoVendasAuditoriaOperador.resx">
+      <DependentUpon>fGraficoVendasAuditoriaOperador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fGraficoVendasAuditoriaPeriodo.resx">
+      <DependentUpon>fGraficoVendasAuditoriaPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fGraficoContatosTrabalhados.resx">
+      <DependentUpon>fGraficoContatosTrabalhados.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fGraficoVendas.resx">
+      <DependentUpon>fGraficoVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fMidiaDetalhado.resx">
+      <DependentUpon>fMidiaDetalhado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fMidiaSintetico.resx">
+      <DependentUpon>fMidiaSintetico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fStatusAuditoria.resx">
+      <DependentUpon>fStatusAuditoria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fBlackList.resx">
+      <DependentUpon>fBlackList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fEnviarPreditivo.resx">
+      <DependentUpon>fEnviarPreditivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fBackofficeVenda_detalhe.resx">
+      <DependentUpon>fBackofficeVenda_detalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fConfiguracaoEmail.resx">
+      <DependentUpon>fConfiguracaoEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fMailingIndicacao.resx">
+      <DependentUpon>fMailingIndicacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fPermitirEnvioEmail.resx">
+      <DependentUpon>fPermitirEnvioEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSupervisor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="operador\fAtendimento.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fExportarMailing.resx">
+      <DependentUpon>fExportarMailing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fDadosVendas.resx">
+      <DependentUpon>fDadosVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fConsultarCliente.resx">
+      <DependentUpon>fConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fContatosTrabalhadosSintetico.resx">
+      <DependentUpon>fContatosTrabalhadosSintetico.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fContatosTrabalhadosDetalhado.resx">
+      <DependentUpon>fContatosTrabalhadosDetalhado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fBackofficeVenda_filtro.resx">
+      <DependentUpon>fBackofficeVenda_filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fVendasSintetico.resx">
+      <DependentUpon>fVendasSintetico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fResubmitMailing.resx">
+      <DependentUpon>fResubmitMailing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fRespostasScriptSintetico.resx">
+      <DependentUpon>fRespostasScriptSintetico.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fRespostasScriptDetalhado.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fRespostasScriptDetalhado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fStatusMailing.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fStatusMailing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorio\fStatusProspectPorDDD.resx">
+      <DependentUpon>fStatusProspectPorDDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fBloqueioDDD.resx">
+      <DependentUpon>fBloqueioDDD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fCampanha.resx">
+      <DependentUpon>fCampanha.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fMailing.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fMailing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supervisor\fUsuario.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="bin\Debug\conexao.ini" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="tabulare_TemporaryKey.pfx" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="relatorio\fExportarMailing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fExportarMailing.Designer.cs">
+      <DependentUpon>fExportarMailing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fDadosVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fDadosVendas.Designer.cs">
+      <DependentUpon>fDadosVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fConsultarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fConsultarCliente.designer.cs">
+      <DependentUpon>fConsultarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fContatosTrabalhadosSintetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fContatosTrabalhadosSintetico.Designer.cs">
+      <DependentUpon>fContatosTrabalhadosSintetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fContatosTrabalhadosDetalhado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fContatosTrabalhadosDetalhado.Designer.cs">
+      <DependentUpon>fContatosTrabalhadosDetalhado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fBackofficeVenda_filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fBackofficeVenda_filtro.designer.cs">
+      <DependentUpon>fBackofficeVenda_filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fVendasSintetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fVendasSintetico.Designer.cs">
+      <DependentUpon>fVendasSintetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fResubmitMailing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fResubmitMailing.Designer.cs">
+      <DependentUpon>fResubmitMailing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fRespostasScriptSintetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fRespostasScriptSintetico.Designer.cs">
+      <DependentUpon>fRespostasScriptSintetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fRespostasScriptDetalhado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fRespostasScriptDetalhado.Designer.cs">
+      <DependentUpon>fRespostasScriptDetalhado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fStatusMailing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fStatusMailing.Designer.cs">
+      <DependentUpon>fStatusMailing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorio\fStatusProspectPorDDD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorio\fStatusProspectPorDDD.designer.cs">
+      <DependentUpon>fStatusProspectPorDDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fBloqueioDDD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fBloqueioDDD.Designer.cs">
+      <DependentUpon>fBloqueioDDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fCampanha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fCampanha.Designer.cs">
+      <DependentUpon>fCampanha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fMailing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fMailing.Designer.cs">
+      <DependentUpon>fMailing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fStatus.Designer.cs">
+      <DependentUpon>fStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\fUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supervisor\fUsuario.Designer.cs">
+      <DependentUpon>fUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebReference\PlanetFone\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="ws\PlanetFone.cs" />
+    <None Include="WebReference\PlanetFone\WhisperingResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens\Msg.png" />
+    <None Include="imagens\Limpar.png" />
+    <None Include="imagens\Operador.png" />
+    <None Include="Resources\Logo PontoBR.png" />
+    <None Include="imagens\excel.png" />
+    <None Include="imagens\topo_troca_senha.png" />
+    <None Include="Resources\LogoTab.gif" />
+    <None Include="imagens\form41.jpg" />
+    <None Include="Resources\bg_body.jpg" />
+    <None Include="imagens\Lixeira.gif" />
+    <None Include="imagens\Trash.png" />
+    <None Include="imagens\Lixeira.ico" />
+    <None Include="imagens\search.png" />
+    <None Include="imagens\Find.bmp" />
+    <None Include="Resources\Callflex.png" />
+    <None Include="imagens\Sync.png" />
+    <None Include="imagens\Exit.png" />
+    <None Include="imagens\EntrarSistema.png" />
+    <None Include="imagens\EnviarResub.png" />
+    <None Include="imagens\CalcularQtd.png" />
+    <None Include="imagens\ImportarM.png" />
+    <None Include="imagens\OK.png" />
+    <None Include="imagens\DTodos.png" />
+    <None Include="imagens\STodos.png" />
+    <None Include="imagens\ExportarD.png" />
+    <None Include="imagens\GDados.png" />
+    <None Include="imagens\NContatot.png" />
+    <None Include="imagens\Salvar1.png" />
+    <None Include="imagens\icon_salvar.png" />
+    <None Include="imagens\fFechar.png" />
+    <None Include="imagens\Desconect.png" />
+    <None Include="imagens\Dial.png" />
+    <None Include="imagens\ConsultaCliente.png" />
+    <None Include="imagens\SalvarP.png" />
+    <None Include="imagens\Venda.png" />
+    <None Include="imagens\CManual.png" />
+    <None Include="imagens\MTrabalhos.png" />
+    <None Include="imagens\Prospect.png" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\imagens\049.png" />
+    <None Include="bin\Debug\imagens\users.png" />
+    <None Include="bin\Debug\imagens\phone.png" />
+    <None Include="bin\Debug\imagens\address-book-blue.png" />
+    <None Include="bin\Debug\imagens\telephone.png" />
+    <None Include="bin\Debug\imagens\key.png" />
+    <None Include="bin\Debug\imagens\teste7.gif" />
+    <None Include="bin\Debug\imagens\Tabulare-Topo-v1.jpg" />
+    <None Include="bin\Debug\imagens\cross.png" />
+    <None Include="bin\Debug\imagens\3floppy_unmount.png" />
+    <None Include="bin\Debug\imagens\Sobre.jpg" />
+    <None Include="bin\Debug\imagens\Logo PontoBR.png" />
+    <Content Include="bin\Debug\Vonix.dll" />
+    <Content Include="icone3.ico" />
+    <None Include="imagens\Agendamentos.png" />
+    <None Include="imagens\Atualizar.png" />
+    <None Include="imagens\AgendOperadores.jpg" />
+    <None Include="imagens\AudVendas.jpg" />
+    <None Include="imagens\Abort.png" />
+    <None Include="imagens\Alarm clock.png" />
+    <None Include="imagens\AtualizarAg.png" />
+    <Content Include="imagens\Bitmap1.bmp" />
+    <None Include="imagens\BloDDD.jpg" />
+    <None Include="imagens\bNovo.png" />
+    <Content Include="imagens\btatualizar.png" />
+    <None Include="imagens\Tabulare.jpg" />
+    <None Include="imagens\MailIndicacao.jpg" />
+    <None Include="imagens\email.jpg" />
+    <None Include="imagens\ResubMailing.jpg" />
+    <None Include="imagens\ConsCliente.jpg" />
+    <None Include="imagens\VMotoboy.jpg" />
+    <None Include="imagens\Midia.jpg" />
+    <None Include="imagens\DadosVenda1.jpg" />
+    <None Include="imagens\DadosVenda.jpg" />
+    <None Include="imagens\ExpMailing.jpg" />
+    <None Include="imagens\ProspDDD.jpg" />
+    <None Include="imagens\StatusMailing.jpg" />
+    <None Include="imagens\Trab.Sint.jpg" />
+    <None Include="imagens\Trab.Det.jpg" />
+    <None Include="imagens\Status.jpg" />
+    <None Include="imagens\Campanha.jpg" />
+    <None Include="imagens\Mailing.jpg" />
+    <None Include="imagens\Usuario.jpg" />
+    <None Include="imagens\Resubmit.png" />
+    <None Include="imagens\Importar.png" />
+    <None Include="imagens\Novo.png" />
+    <None Include="imagens\Cancelar.png" />
+    <None Include="imagens\Exportar.png" />
+    <None Include="imagens\Gerar_dados.png" />
+    <None Include="imagens\Desmarcar.png" />
+    <None Include="imagens\Marcar_todos.png" />
+    <None Include="imagens\Fazer_novo_contato.png" />
+    <None Include="imagens\Salvar.png" />
+    <None Include="imagens\Fechar.png" />
+    <None Include="imagens\form4.jpg" />
+    <None Include="imagens\topo.jpg" />
+    <None Include="imagens\LogoTab2.gif" />
+    <None Include="imagens\LogoTab.gif" />
+    <None Include="imagens\Logo_Tabulare.gif" />
+    <None Include="imagens\Logo.gif" />
+    <None Include="imagens\Desconectar.png" />
+    <None Include="imagens\Discar.png" />
+    <None Include="imagens\Visualizar_venda.png" />
+    <None Include="imagens\Cancelar_cadastro.png" />
+    <None Include="imagens\Cadastro_manual.png" />
+    <None Include="imagens\Consultar_cliente.png" />
+    <None Include="imagens\Meus_trabalhos.png" />
+    <None Include="imagens\Salvar_contato.png" />
+    <None Include="imagens\Mais_prospect.png" />
+    <None Include="imagens\Sair.png" />
+    <None Include="imagens\Entrar.png" />
+    <None Include="Resources\btatualizar.png" />
+    <None Include="Resources\btagenda.png" />
+    <None Include="Resources\btauditarvenda.png" />
+    <None Include="Resources\btsair1.png" />
+    <None Include="Resources\btentrar1.png" />
+    <None Include="Resources\btentrar.png" />
+    <None Include="Resources\btsair.png" />
+    <None Include="imagens\btsair.png" />
+    <None Include="imagens\btentrar.png" />
+    <None Include="imagens\bt.png" />
+    <None Include="imagens\btexportar.png" />
+    <None Include="imagens\btnovocontato.png" />
+    <None Include="imagens\btgerardados.png" />
+    <None Include="imagens\btresubmit.png" />
+    <None Include="imagens\btsalvarconfig.png" />
+    <None Include="imagens\btativadesativa.png" />
+    <None Include="imagens\btimportar.png" />
+    <None Include="imagens\btnovo.png" />
+    <None Include="imagens\btexcluir2.png" />
+    <None Include="imagens\btcancelar2.png" />
+    <None Include="imagens\btfechar.png" />
+    <None Include="imagens\btdesligar2.png" />
+    <None Include="imagens\btdiscar.png" />
+    <None Include="imagens\btcancelar.png" />
+    <None Include="imagens\btconsultarcliente.png" />
+    <None Include="imagens\btsalvarcontato.png" />
+    <None Include="imagens\btsalvar.png" />
+    <None Include="imagens\btconsultarvenda2.png" />
+    <None Include="imagens\btconsultarvenda.png" />
+    <None Include="imagens\btindica.png" />
+    <None Include="imagens\btsalvarcontato2.png" />
+    <None Include="imagens\btscontatos2.png" />
+    <None Include="imagens\btsalproxprospect.png" />
+    <None Include="Resources\1306784635_trophy.png" />
+    <None Include="WebReference\PlanetFone\AbreAtendimentoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\AgendarRelatoriosResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\AgentePausaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ApagaAgendamentoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\AssociacaoAgentesFilasResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\AtualizaCdrpResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\BuscaChamadaAgenteResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\BuscaCodAgenteResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\BuscaDadosLigacaoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\BuscaGravacaoParaRamalResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\BuscaGravacaoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\BuscaMensagemCaixaPostalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\CanaisAtivosResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\CapturaLigacaoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\CarregaMailingResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ChamadasAgentesResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ChamadasFilaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ConferenciaIniciaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ConsultaAgendamentosResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ControleConferenciaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\DefineStatusRamalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\DesligaChamadaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\DiscaAmiResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\Discapf4Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\DiscaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\DownloadMensagemCaixaPostalResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\EnviaEventoCommunicationResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\EnviaSmsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\EstacionaChamadaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\EstatLoginPausaAgentesResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\GravacaoDeChamadaPessoalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\GravacaoDeChamadaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\InformacoesFilasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\IniciaIntercalacaoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ListaEventosRamalAgenteIndisponivelResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ListaLoginPausaAgentesPeriodoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ListaLoginPausaAgentesResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ListaSituacaoAtualResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\LoginResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\LogoutResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ManutencaoCaixaPostalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ManutencaoGravacaoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ManutencaoTiposPausaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ManutencaoTransbordoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\MonitoraLigacaoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\MonitoraRamalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\MonitoraServicosResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\PesquisaCaixaPostalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\PesquisaGravacaoDiscadoraResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\PesquisaGravacaoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\PesquisaTransbordoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\ProcuraEstatisticasRamalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="WebReference\PlanetFone\RegistraRamalAgenteIndisponivelResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\RegistraTransbordoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\RelatoriosBaseResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\RetornoAutomaticoResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\SituacaoAgenteResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\StatusAgentesFilasAtualResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\StatusAgentesResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\StatusChamadasAgentesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\StatusChamadasResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TiposPausaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TransferChamadaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TransferComConsultaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TransfereChamadaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TransfereComConsultaAgentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TransfereComConsultaOperatorResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TransfereComConsultaResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\TransfereRamalResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WebReference\PlanetFone\wenvpabx2.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports for .NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Data.Access.Components.2.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Data Access Components 2.8</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.JSharp.2.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual J# .NET Redistributable Package 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.8.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2008 Report Viewer</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.1.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Visual.C++.8.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Visual C++ Runtime Libraries %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.2.0">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="WebReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.25.254:3080/wenvpabx2%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>WebReference\PlanetFone\</RelPath>
+      <UpdateFromURL>http://192.168.25.254:3080/wenvpabx2%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>v1Tabulare_z13_wenvpabx2_wenvpabx2</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
