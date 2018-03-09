@@ -11,7 +11,7 @@ namespace controller
 {
     public class acaoCTL
     {
-        public void PreencherComboBox_Acao(ComboBox comboAcao)
+        public void PreencherComboBox_Acao(ComboBox comboAcao)     
         {
             acaoBLL BAcao = new acaoBLL();
             DataTable dataTable = BAcao.RetornarAcoes();
