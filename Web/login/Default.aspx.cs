@@ -28,7 +28,7 @@ public partial class login_Default : App_Code.BaseWeb
 
             //Versão do sistema igual do Windows form
             string sVersaoAplicativo = "v6.0";
-            string sRelease = "r01";
+            string sRelease = "r03";
 
             CarregarConfiguracoes();
 
@@ -42,15 +42,13 @@ public partial class login_Default : App_Code.BaseWeb
 
             lblCopyright.Text = "Copyright © " + DateTime.Now.Year + " - PontoBR Sistemas - Versão Framework - " + PontoBr.Configuracao.Versao + " - " + sVersaoAplicativo + " (" + sRelease + ") - " + nOperadores;
 
-            if (ConfigurationManager.AppSettings["TestandoSistema"].ToString() == "Não")
+            if (ConfigurationManager.AppSettings["TestandoSistema"].ToString() == "Sim")
             {
-                txtUsuario.Attributes.Add("value", "o");
-                txtSenha.Attributes.Add("value", "o"); 
-                txtRamal.Attributes.Add("value", "12345");
+                txtUsuario.Attributes.Add("value", "s");
+                txtSenha.Attributes.Add("value", "s"); 
+                txtRamal.Attributes.Add("value", "12345");   
             }
-            txtUsuario.Attributes.Add("value", "o");
-            txtSenha.Attributes.Add("value", "o");
-            txtRamal.Attributes.Add("value", "12345");
+       
 
             //CarregarConfiguracoes();
 

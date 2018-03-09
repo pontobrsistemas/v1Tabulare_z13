@@ -16,18 +16,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Web.UI;
 using System.IO;
-using System.Windows.Forms;
 
-
-public partial class supervisor_mailing : App_Code.BaseWeb 
+public partial class supervisor_mailing : App_Code.BaseWeb
 {
-    private string sArquivo;
-    private static DataSet dataSetMailing;
-
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!usuarioCTL.PermitirAcesso("Supervisor")) Response.Redirect("../login/logout.aspx?e=logout");
-        
+
         if (!IsPostBack)
         {
             CarregarCampanhas();
@@ -79,7 +74,7 @@ public partial class supervisor_mailing : App_Code.BaseWeb
         radAtivo.SelectedValue = "1";
         chkDuplicado.Checked = false;
         lblMensagem.Text = "";
-       
+
         CarregarMailings();
     }
 
@@ -100,7 +95,7 @@ public partial class supervisor_mailing : App_Code.BaseWeb
             PontoBr.Utilidades.Diversos.ExibirAlertaScriptManager("Selecione [Campanha].", this.Page);
             return false;
         }
-            
+
         return true;
     }
 
@@ -136,7 +131,7 @@ public partial class supervisor_mailing : App_Code.BaseWeb
                 e.Row.Attributes.Add("onmouseover", "this.className='grid_row_selecionado'");
                 e.Row.Attributes.Add("onmouseout", "this.className='grid_alternative_row'");
             }
-            else 
+            else
             {
                 e.Row.Attributes.Add("onmouseover", "this.className='grid_row_selecionado'");
                 e.Row.Attributes.Add("onmouseout", "this.className='grid'");
@@ -157,7 +152,7 @@ public partial class supervisor_mailing : App_Code.BaseWeb
             if (PodeSalvar())
             {
                 usuario Usuario = (usuario)HttpContext.Current.Session["Usuario"];
-                
+
                 //Editar
                 if (!String.IsNullOrEmpty(hddId.Value))
                 {
@@ -166,11 +161,11 @@ public partial class supervisor_mailing : App_Code.BaseWeb
                     Mailing.Ativo = Convert.ToInt32(radAtivo.SelectedValue);
 
                     mailingCTL CMailing = new mailingCTL();
-                    CMailing.EditarMailing(Mailing);                
-                    
-                    sMensagem = "Alterações salvas com sucesso!";                    
+                    CMailing.EditarMailing(Mailing);
+
+                    sMensagem = "Alterações salvas com sucesso!";
                 }
-                
+
                 LimparCampos();
                 PontoBr.Utilidades.Diversos.ExibirAlertaScriptManager(sMensagem, this.Page);
             }
@@ -193,7 +188,7 @@ public partial class supervisor_mailing : App_Code.BaseWeb
                     string sFileName = fileDocumento.PostedFile.FileName;
 
                     sExtensao = sFileName.Substring(sFileName.Length - 4).ToLower();
-                    if (sExtensao == ".xlsx")
+                    if (sExtensao == ".txt")
                     {
                         sFilePath = MapPath(@sEnderecoPasta) + fileDocumento.FileName;
                         fileDocumento.SaveAs(MapPath(@sEnderecoPasta) + fileDocumento.FileName);
@@ -210,99 +205,91 @@ public partial class supervisor_mailing : App_Code.BaseWeb
         {
             lblMensagem.Text = ex.Message;
         }
-
-
-        //try
-        //{
-        //    if (PodeImportar())
-        //    {
-        //        string sExtensao;
-        //        string sEnderecoPasta = "~/mailing/";
-
-        //        if (fileDocumento.PostedFile != null && fileDocumento.HasFile)
-        //        {
-        //            string sFilePath;
-        //            string sFileName = fileDocumento.PostedFile.FileName;
-
-        //            sExtensao = sFileName.Substring(sFileName.Length - 4).ToLower();
-        //            if (sExtensao == ".txt")
-        //            {
-        //                sFilePath = MapPath(@sEnderecoPasta) + fileDocumento.FileName;
-        //                fileDocumento.SaveAs(MapPath(@sEnderecoPasta) + fileDocumento.FileName);
-        //                LeArquivo(sFilePath);
-        //            }
-        //            else
-        //                lblMensagem.Text = "Extensão do arquivo inválido!";
-        //        }
-        //        else
-        //            lblMensagem.Text = "Arquivo inválido!";
-        //    }
-        //}
-        //catch (Exception ex)
-        //{
-        //    lblMensagem.Text = ex.Message;
-        //}
     }
 
     private void LeArquivo(string sFileRetorno)
     {
-        try
+        int iQtdeImportado = 0;
+        int iQtdeRegistro = 0;
+        prospect[] Prospects = null;
+        ArrayList ProspectInvalidosLista = new ArrayList();
+        prospectCTL CProspect = new prospectCTL();
+
+        mailing Mailing = new mailing();
+        Mailing.Mailing = PontoBr.Utilidades.String.RemoverCaracterInvalido(txtMailing.Text);
+        Mailing.IDCampanha = Convert.ToInt32(dropCampanha.SelectedValue);
+        Mailing.Ativo = Convert.ToInt32(radAtivo.SelectedValue);
+        string sImportarDuplicado = chkDuplicado.Checked == true ? "Não" : "Sim";
+
+        usuario Usuario = (usuario)HttpContext.Current.Session["Usuario"];
+        int iIDMailing = new mailingCTL().CadastrarMailing(Mailing, Usuario.IDUsuario);
+
+        //Ler registros do arquivo
+        StreamReader streamReader = new StreamReader(sFileRetorno);
+        while (!streamReader.EndOfStream)
         {
-            int iQtdeImportado = 0;
-            int iQtdeRegistro = 0;
-            string sMensagem;
+            string s = streamReader.ReadLine();
+            if (s == null)
+                break;
 
-            txtMailing.Text = "Mailing - " + DateTime.Now.ToString("ddMMyyyy HHmmss");
+            iQtdeRegistro++;
+            Console.WriteLine(s);
+        }
+        streamReader.Close();
 
-            OpenFileDialog FileDialog = new OpenFileDialog();
-            DialogResult DialogResult;
+        Prospects = new prospect[iQtdeRegistro];
+        //Ler registros do arquivo
 
-            FileDialog.Title = "Abrir Como";
-            FileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-            DialogResult = FileDialog.ShowDialog();
-            string sEnderecoCompletoArquivo = FileDialog.FileName;
-            sArquivo = FileDialog.SafeFileName;
-            //txtArquivo.Text = sEnderecoCompletoArquivo;
+        int i = 0;
+        string sLinha = null;
+        streamReader = new StreamReader(sFileRetorno);
+        while (!streamReader.EndOfStream)
+        {
+            string s = streamReader.ReadLine();
+            if (s == null)
+                break;
 
+            sLinha = s.ToString();
+            string[] sItem = sLinha.Split(';');
 
-            if (string.IsNullOrEmpty(sEnderecoCompletoArquivo))
+            string sMotivo = RegistroValido(sItem, Prospects);
+            if (String.IsNullOrEmpty(sMotivo))
             {
-                PontoBr.Utilidades.Diversos.ExibirAlertaWindowsForm("[Arquivo] inválido.", "Tabulare");
+                iQtdeImportado++;
+                Prospects[i] = ImportarProspect(sItem, iIDMailing, sImportarDuplicado);
+                i++;
             }
             else
             {
-                dataSetMailing = new DataSet();
-                dataSetMailing = PontoBr.Banco.Excel.RetornarRegistrosExcel(sEnderecoCompletoArquivo);
+                prospect ProspectInvalido = new prospect();
+                ProspectInvalido.sLinha = sLinha;
 
-                if (dataSetMailing.Tables.Count == 0)
-                {
-                    PontoBr.Utilidades.Diversos.ExibirAlertaWindowsForm("Nenhum registro encontrado no arquivo!", "Tabulare");
-                    return;
-                }
-                if (dataSetMailing.Tables[0].Columns[0].ColumnName == "Erro")
-                {
-                    PontoBr.Utilidades.Diversos.ExibirAlertaWindowsForm(dataSetMailing.Tables[0].Rows[0]["Erro"].ToString(), "Tabulare");
-                    return;
-                }
-                else
-                {
-                    grdMailingPlanilha.DataSource = dataSetMailing.Tables[0];
-                    //grdMailingPlanilha.t = "Mailing - " + dataSetMailing.Tables[0].Rows.Count.ToString() + " registro(s)";
-
-                }
-
-                sMensagem = "Resumo da leitura do arquivo: \n";
-                sMensagem += "================= \n";
-                sMensagem += "Quantidade de registros do arquivo: " + dataSetMailing.Tables[0].Rows.Count.ToString() + "\n";
-                sMensagem += "================= \n";
-                sMensagem += "Clique no botão Importar para salvar os registros.";
-                MessageBox.Show(sMensagem, "Tabulare");
+                ProspectInvalido.sMotivo = sMotivo;
+                ProspectInvalido.IDMailing = iIDMailing;
+                ProspectInvalidosLista.Add(ProspectInvalido);
             }
+            Console.WriteLine(s);
         }
-        catch (Exception ex)
+        streamReader.Close();
+
+        CProspect.CadastrarProspectInvalidoLista(ProspectInvalidosLista);
+        CProspect.ImportarProspect(Prospects);
+
+        string sQtdeImportado = CProspect.RetornarQtdeProspectMailing(iIDMailing);
+
+        LimparCampos();
+
+        string sMensagem;
+        sMensagem = "Resumo da importação:<br/>";
+        sMensagem += "=================<br/>";
+        sMensagem += "Quantidade de registros do arquivo: " + iQtdeRegistro.ToString() + "<br/>";
+        sMensagem += "Quantidade de registros importados: " + sQtdeImportado;
+        if (chkDuplicado.Checked)
         {
-            PontoBr.Utilidades.Diversos.ExibirAlertaWindowsForm(ex.Message, "Tabulare Software");
+            sMensagem += "<br/><br/>Obs: Você optou por não importar prospects (telefones) que já existiam na base de dados.";
         }
+
+        lblMensagem.Text = sMensagem;
     }
 
     private prospect ImportarProspect(string[] sItem, int iIDMailing, string sImportarDuplicado)
@@ -438,14 +425,6 @@ public partial class supervisor_mailing : App_Code.BaseWeb
             {
                 dTelefone2 = Convert.ToDouble(sTelefone2);
                 sTelefone2 = dTelefone2.ToString();
-
-
-                //Verifica se o Telefone2 tem 10 ou 11 dígitos
-                if (sTelefone2.Length != 10 && sTelefone2.Length != 11)
-                {
-                    sMotivo = "[Telefone 2] não possui 10 ou 11 caracteres";
-                    return sMotivo;
-                }
             }
         }
         catch
@@ -463,13 +442,6 @@ public partial class supervisor_mailing : App_Code.BaseWeb
             {
                 dTelefone3 = Convert.ToDouble(sTelefone3);
                 sTelefone3 = dTelefone3.ToString();
-
-                //Verifica se o Telefone3 tem 10 ou 11 dígitos
-                if (sTelefone3.Length != 10 && sTelefone3.Length != 11)
-                {
-                    sMotivo = "[Telefone 3] não possui 10 ou 11 caracteres";
-                    return sMotivo;
-                }
             }
         }
         catch

@@ -45,22 +45,22 @@
                         </tr>
                         <tr>
                             <td class="style14">
-                                <asp:Label ID="lblArquivo" runat="server" CssClass="label" Text="Arquivo:"></asp:Label>
-                            </td>
-                            <td class="style21">
-                                <asp:FileUpload ID="fileDocumento" runat="server" CssClass="textbox" Width="330px" />
-                                <br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style14">
                                 <asp:Label ID="lblCampanha" runat="server" CssClass="label" Text="Campanha:"></asp:Label>
                             </td>
                             <td class="style21">
                                 <asp:DropDownList ID="dropCampanha" runat="server" CssClass="dropdown" 
                                     Width="400px" AutoPostBack="True" 
-                                    onselectedindexchanged="dropCampanha_SelectedIndexChanged">
+                                    onselectedindexchanged="dropCampanha_SelectedIndexChanged" >
                                 </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style14">
+                                <asp:Label ID="lblArquivo" runat="server" CssClass="label" Text="Arquivo:"></asp:Label>
+                            </td>
+                            <td class="style21">
+                                <asp:FileUpload ID="fileDocumento" runat="server" CssClass="textbox" 
+                                    Width="330px" />
                             </td>
                         </tr>
                         <tr>
