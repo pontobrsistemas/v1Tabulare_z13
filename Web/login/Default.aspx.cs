@@ -23,6 +23,7 @@ public partial class login_Default : App_Code.BaseWeb //// TESTE GITHUB DE ROBSO
 
         if (!IsPostBack)
         {
+            //Teste do Chicão para o Robson
             //Variável de sessão para guardar o browser do usuário
             HttpContext.Current.Session["Browser"] = Request.Browser.Browser.ToString();
 
